@@ -85,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean useSensorSteering = false; 
     public boolean useSensorPitch = false;
 
+    public static float pitchSensitivity = 1.0f;
+    public static float rollSensitivity = 1.0f;
+
     private final Handler handlerUpdateUI = new Handler(Looper.getMainLooper());
     private final Runnable runnableUpdateUI = new Runnable() {
         @SuppressLint("DefaultLocale")
@@ -158,6 +161,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         
         SharedPreferences layoutPrefs = getSharedPreferences("layout_positions", Context.MODE_PRIVATE);
+        pitchSensitivity = layoutPrefs.getFloat("pitchSensitivity", 1.0f);
+        rollSensitivity = layoutPrefs.getFloat("rollSensitivity", 1.0f);
 
         setContentView(R.layout.main);
         slideDistancePx = SLIDE_DISTANCE_DP * getResources().getDisplayMetrics().density;
@@ -234,6 +239,10 @@ public class MainActivity extends AppCompatActivity {
                 globalBuffer.turnOn();
                 globalBuffer.setUpdatePitch(useSensorSteering);  // Steering is controlled by toggle
                 globalBuffer.setUpdateRoll(false); // Acceleration sensor is ALWAYS OFF
+            } else if (fragmentId == R.id.nav_sensitivity_frag) {
+                fragment = FragmentSensitivity.class.newInstance();
+                controllerMode = ControllerMode.None;
+                globalBuffer.turnOff();
             } else {
                 fragment = FragmentConnection.class.newInstance();
                 controllerMode = ControllerMode.None;

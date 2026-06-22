@@ -98,6 +98,7 @@ In this case, close the app and open again.
 - Accurate pedal physics with automatic spring-back logic
 - Bug fixes for simultaneous multi-touch joystick & trigger input
 - A modern, sleek controller logo and glassmorphism styling
+- Dedicated global sensitivity sliders for pitch and roll
 
 > **Note:** Included are pre-configured layouts in [Assets/steering_layouts.json](Assets/steering_layouts.json). The layout elements may not be perfectly aligned for every device's screen size or aspect ratio. Please make sure to enter edit mode and adjust them to your preference! This app is fully tested on Forza Horizon 6.
 
@@ -114,7 +115,7 @@ In this case, close the app and open again.
 </p>
 <br>
 <p align="center">
-  <img src="Assets/gallery/5.jpeg" width="400" />
+  <img src="Assets/gallery/5.jpeg" width="400" /> &nbsp;&nbsp;&nbsp; <img src="Assets/gallery/6.jpeg" width="400" />
 </p>
 
 ---

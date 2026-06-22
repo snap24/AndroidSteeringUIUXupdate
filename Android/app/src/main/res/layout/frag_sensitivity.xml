@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Global Sensor Sensitivity"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#88000000"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+        <TextView
+            android:id="@+id/tv_pitch_sensi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Steering (Pitch) Sensitivity: 1.0x"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+        <SeekBar
+            android:id="@+id/seek_pitch_sensi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="300"
+            android:progress="100" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#88000000"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/tv_roll_sensi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acceleration (Roll) Sensitivity: 1.0x"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+        <SeekBar
+            android:id="@+id/seek_roll_sensi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="300"
+            android:progress="100" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_reset_sensi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Reset to Default"
+        android:backgroundTint="#FF5252"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

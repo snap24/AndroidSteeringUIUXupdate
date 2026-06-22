@@ -4,26 +4,30 @@
         <item
             android:id="@+id/nav_connection_frag"
             android:title="@string/navTitleConnection"
-            android:icon="@mipmap/ic_launcher_foreground" />
+            android:icon="@drawable/ic_menu_circle" />
         <item android:title="@string/navTitleControl">
             <menu>
                 <group android:checkableBehavior="single">
                     <item
                         android:id="@+id/nav_control_default_frag"
                         android:title="@string/navTitleControlSteer1"
-                        android:icon="@mipmap/ic_launcher_foreground"/>
+                        android:icon="@drawable/ic_menu_circle"/>
                     <item
                         android:id="@+id/nav_control_alt_frag"
                         android:title="@string/navTitleControlSteer2"
-                        android:icon="@mipmap/ic_launcher_foreground"/>
+                        android:icon="@drawable/ic_menu_circle"/>
                     <item
                         android:id="@+id/nav_control_pad_frag"
                         android:title="@string/navTitleControlPad"
-                        android:icon="@mipmap/ic_launcher_foreground"/>
+                        android:icon="@drawable/ic_menu_circle"/>
                     <item
                         android:id="@+id/nav_control_steeringwheel_frag"
                         android:title="@string/navTitleControlSteeringWheel"
-                        android:icon="@mipmap/ic_launcher_foreground"/>
+                        android:icon="@drawable/ic_menu_circle"/>
+                    <item
+                        android:id="@+id/nav_sensitivity_frag"
+                        android:title="Sensitivity Controller"
+                        android:icon="@drawable/ic_menu_circle"/>
                 </group>
             </menu>
         </item>

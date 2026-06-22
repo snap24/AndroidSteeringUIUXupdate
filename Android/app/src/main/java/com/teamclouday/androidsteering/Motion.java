@@ -188,6 +188,9 @@ public class Motion implements SensorEventListener {
         // Calculated by how much gravity is pulling on the Z-axis (front/back tilt).
         double accelAngle = Math.toDegrees(Math.asin(MathUtils.clamp(z / 9.81f, -1.0f, 1.0f)));
 
+        steerAngle *= MainActivity.pitchSensitivity;
+        accelAngle *= MainActivity.rollSensitivity;
+
         updatePitch((float) steerAngle);
         updateRoll((float) accelAngle);
     }
