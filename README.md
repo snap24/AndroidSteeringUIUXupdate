@@ -50,7 +50,7 @@ For full setup instructions, documentation, and the Windows Server executable, p
 - Set mapping mode
 - Import and export of layouts
 
-> **Note:** Included are pre-configured layouts in `Assets/steering_layouts.json`. The layout elements may not be perfectly aligned for every device's screen size or aspect ratio. Please make sure to enter edit mode and adjust them to your preference!
+> **Note:** Included are pre-configured layouts in `Assets/steering_layouts.json`. The layout elements may not be perfectly aligned for every device's screen size or aspect ratio. Please make sure to enter edit mode and adjust them to your preference! This app is fully tested on Forza Horizon 6.
 
 ---
 
