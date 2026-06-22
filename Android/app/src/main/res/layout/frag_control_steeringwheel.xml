@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.teamclouday.androidsteering.view.DraggableFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/draggable_root_sw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+
+        <com.teamclouday.androidsteering.view.SteeringWheelView
+            android:id="@+id/steering_wheel_view"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp" />
+
+        <TextView
+            android:id="@+id/tv_steering_angle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0°"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/steering_wheel_view"
+            app:layout_constraintStart_toStartOf="@+id/steering_wheel_view"
+            app:layout_constraintEnd_toEndOf="@+id/steering_wheel_view"
+            android:layout_marginBottom="16dp" />
+
+        <!-- RIGHT SIDE PEDALS -->
+        <com.teamclouday.androidsteering.view.PedalSliderView
+            android:id="@+id/slider_accel"
+            android:layout_width="100dp"
+            android:layout_height="128dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="32dp" />
+
+        <com.teamclouday.androidsteering.view.PedalSliderView
+            android:id="@+id/slider_brake"
+            android:layout_width="100dp"
+            android:layout_height="128dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/slider_accel"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="32dp" />
+
+        <com.teamclouday.androidsteering.view.PedalSliderView
+            android:id="@+id/slider_clutch"
+            android:layout_width="100dp"
+            android:layout_height="128dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/slider_brake"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="32dp" />
+
+        <!-- DPAD (Top Left) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonUP"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="▲"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#333333"
+            app:layout_constraintBottom_toTopOf="@+id/buttonDOWN"
+            app:layout_constraintStart_toStartOf="@+id/buttonDOWN"
+            app:layout_constraintEnd_toEndOf="@+id/buttonDOWN"
+            android:layout_marginBottom="56dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLEFT"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="◀"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#333333"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonDOWN"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDOWN"
+            app:layout_constraintTop_toTopOf="@+id/buttonUP" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonDOWN"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="▼"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#333333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="120dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonRIGHT"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="▶"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#333333"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonDOWN"
+            app:layout_constraintStart_toEndOf="@+id/buttonDOWN"
+            app:layout_constraintTop_toTopOf="@+id/buttonUP" />
+
+        <!-- ABXY (Top Right) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonY"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="Y"
+            android:textColor="#FFEB3B"
+            app:backgroundTint="@color/btn_overlay_bg"
+            app:layout_constraintBottom_toTopOf="@+id/buttonA"
+            app:layout_constraintStart_toStartOf="@+id/buttonA"
+            app:layout_constraintEnd_toEndOf="@+id/buttonA"
+            android:layout_marginBottom="56dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonX"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="X"
+            android:textColor="#2196F3"
+            app:backgroundTint="@color/btn_overlay_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonA"
+            app:layout_constraintEnd_toStartOf="@+id/buttonA"
+            app:layout_constraintTop_toTopOf="@+id/buttonY" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonA"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="A"
+            android:textColor="#8BC34A"
+            app:backgroundTint="@color/btn_overlay_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="80dp"
+            android:layout_marginTop="120dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonB"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="B"
+            android:textColor="#F44336"
+            app:backgroundTint="@color/btn_overlay_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonA"
+            app:layout_constraintStart_toEndOf="@+id/buttonA"
+            app:layout_constraintTop_toTopOf="@+id/buttonY" />
+
+        <!-- TOP BUTTONS -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLB"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="LB"
+            android:backgroundTint="#222222"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonBACK"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="BACK"
+            android:backgroundTint="#444444"
+            app:layout_constraintStart_toEndOf="@+id/buttonLB"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonHOME"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="HOME"
+            android:backgroundTint="#444444"
+            app:layout_constraintStart_toEndOf="@+id/buttonBACK"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSTART"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="START"
+            android:backgroundTint="#444444"
+            app:layout_constraintStart_toEndOf="@+id/buttonHOME"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonRB"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="RB"
+            android:backgroundTint="#222222"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="32dp" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_sensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tilt Sensor"
+            android:textColor="@color/btn_overlay_text"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-black"
+            android:checked="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.teamclouday.androidsteering.view.SensorCrosshairView
+            android:id="@+id/sensorCrosshair"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.teamclouday.androidsteering.view.DraggableFrameLayout>

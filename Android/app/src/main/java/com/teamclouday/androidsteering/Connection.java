@@ -1,6 +1,6 @@
 // component for communicating with PC side server
 
-package com.example.androidsteering;
+package com.teamclouday.androidsteering;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -48,7 +48,7 @@ public class Connection {
             if (!running) return;
             synchronized (this) {
                 if (updatePitch)
-                    buff.addLast(new Motion.MyMove(false, MotionStatus.SetSteerAngle.getVal(), pitch));
+                    buff.addLast(new Motion.MyMove(false, MotionStatus.SetSteerAngle.getVal(), -pitch));
                 if (updateRoll)
                     buff.addLast(new Motion.MyMove(false, MotionStatus.SetAccAngle.getVal(), roll));
                 while (buff.size() > MAX_SIZE) {

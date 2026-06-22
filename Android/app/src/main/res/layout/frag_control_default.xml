@@ -1,113 +1,100 @@
-<androidx.constraintlayout.widget.ConstraintLayout
+<?xml version="1.0" encoding="utf-8"?>
+<com.teamclouday.androidsteering.view.DraggableFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/draggable_root_def"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipChildren="false">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
 
-    <LinearLayout
-        android:id="@+id/controlDefaultButtons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tv_steering_title"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.05"
+            android:text="@string/controlSteeringTitle"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:shadowColor="#80000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="32dp" />
 
-            <ProgressBar
-                android:id="@+id/progressBarAcc"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:max="100"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:progress="50"
-                android:scaleY="2.0" />
+        <!-- LEFT SIDE -->
 
-            <Button
-                android:id="@+id/buttonY"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:shadowColor="@android:color/black"
-                android:shadowRadius="5"
-                android:text="@string/buttonY"
-                android:textColor="@color/colorButtonY" />
 
-            <Button
-                android:id="@+id/buttonX"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:shadowColor="@android:color/black"
-                android:shadowRadius="5"
-                android:text="@string/buttonX"
-                android:textColor="@color/colorButtonX" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonY"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="@string/buttonY"
+            android:textColor="@color/colorButtonY"
+            app:layout_constraintBottom_toTopOf="@+id/buttonX"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="16dp" />
 
-        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonX"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="@string/buttonX"
+            android:textColor="@color/colorButtonX"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="120dp" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:orientation="vertical">
 
-            <ProgressBar
-                android:id="@+id/progressBarSteer"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:max="100"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:progress="50"
-                android:scaleY="2.0" />
+        <!-- RIGHT SIDE -->
 
-            <Button
-                android:id="@+id/buttonB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:shadowColor="@android:color/black"
-                android:shadowRadius="5"
-                android:text="@string/buttonB"
-                android:textColor="@color/colorButtonB" />
 
-            <Button
-                android:id="@+id/buttonA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:shadowColor="@android:color/black"
-                android:shadowRadius="5"
-                android:text="@string/buttonA"
-                android:textColor="@color/colorButtonA" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonB"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="@string/buttonB"
+            android:textColor="@color/colorButtonB"
+            app:layout_constraintBottom_toTopOf="@+id/buttonA"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp" />
 
-        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonA"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="@string/buttonA"
+            android:textColor="@color/colorButtonA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="120dp" />
 
-    </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="casual"
-        android:text="@string/controlSteeringTitle"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/controlDefaultButtons"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <!-- Other Elements -->
+        <com.teamclouday.androidsteering.view.SensorCrosshairView
+            android:id="@+id/sensorCrosshair"
+            android:layout_width="98dp"
+            android:layout_height="98dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.teamclouday.androidsteering.view.DraggableFrameLayout>

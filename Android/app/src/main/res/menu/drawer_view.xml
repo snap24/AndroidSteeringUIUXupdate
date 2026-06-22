@@ -20,6 +20,10 @@
                         android:id="@+id/nav_control_pad_frag"
                         android:title="@string/navTitleControlPad"
                         android:icon="@mipmap/ic_launcher_foreground"/>
+                    <item
+                        android:id="@+id/nav_control_steeringwheel_frag"
+                        android:title="@string/navTitleControlSteeringWheel"
+                        android:icon="@mipmap/ic_launcher_foreground"/>
                 </group>
             </menu>
         </item>

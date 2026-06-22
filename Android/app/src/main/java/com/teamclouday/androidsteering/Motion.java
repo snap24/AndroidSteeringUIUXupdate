@@ -1,6 +1,6 @@
 // component for collecting motion information
 
-package com.example.androidsteering;
+package com.teamclouday.androidsteering;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -168,20 +168,28 @@ public class Motion implements SensorEventListener {
         SensorManager.getRotationMatrix(rotationMatrix, null, accReading, magReading);
         SensorManager.getOrientation(rotationMatrix, orientation);
 
-        // intense math (lol)
-        // compute real roll (horizontal rotation, or acceleration angle)
-        double roll = Math.asin(MathUtils.clamp(Math.sin(Math.PI * 0.5 + orientation[2]) * Math.cos(orientation[1]), -1.0, 1.0));
-        // to compute the real pitch (vertical rotation, or steering angle)
-        double rollCosInv = Math.cos(roll);
-        rollCosInv = rollCosInv == 0.0 ? 0.0 : 1.0 / rollCosInv;
-        double pitch = Math.asin(MathUtils.clamp(Math.sin(orientation[1]) * rollCosInv, -1.0, 1.0));
+        // Stable Gravity-based Math (No Gimbal Lock)
+        float x = accReading[0];
+        float y = accReading[1];
+        float z = accReading[2];
 
-        // for steering, check whether it is over 90 degrees either side
-        if (orientation[2] > 0.0)
-            pitch = pitch > 0.0 ? Math.PI - Math.abs(pitch) : Math.abs(pitch) - Math.PI;
+        // 1. Steering (Pitch variable)
+        // Calculated by the angle of gravity on the X-Y plane of the device.
+        double steerAngle = 0;
+        if (x >= 0) {
+            // Landscape (Home button on right)
+            steerAngle = Math.toDegrees(Math.atan2(y, x));
+        } else {
+            // Reverse Landscape (Home button on left)
+            steerAngle = -Math.toDegrees(Math.atan2(y, -x));
+        }
 
-        updatePitch((float) Math.toDegrees(pitch));
-        updateRoll((float) Math.toDegrees(roll));
+        // 2. Acceleration (Roll variable)
+        // Calculated by how much gravity is pulling on the Z-axis (front/back tilt).
+        double accelAngle = Math.toDegrees(Math.asin(MathUtils.clamp(z / 9.81f, -1.0f, 1.0f)));
+
+        updatePitch((float) steerAngle);
+        updateRoll((float) accelAngle);
     }
 
     // update pitch

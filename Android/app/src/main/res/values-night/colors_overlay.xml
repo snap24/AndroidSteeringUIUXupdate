@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translucent Steel Grey Controls (#71797E) -->
+    <color name="btn_overlay_bg">#4D71797E</color> <!-- 30% Steel Grey -->
+    <color name="btn_overlay_text">#E0E0E0</color> <!-- Off-white for contrast inside translucent elements -->
+</resources>

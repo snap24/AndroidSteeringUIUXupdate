@@ -1,14 +1,19 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-
-        <item name="android:colorBackground">@color/colorBackgroundWhite</item>
-
+    <!-- Base application theme (Day/Light Mode). -->
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="colorPrimary">#B0BEC5</item> <!-- Light Grey -->
+        <item name="colorPrimaryDark">#90A4AE</item>
+        <item name="colorAccent">#78909C</item>
+        <item name="android:textColor">@android:color/black</item> <!-- Dark text for white BG -->
+        <item name="android:fontFamily">sans-serif-black</item>
         <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="CustomPopupTheme" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:popupBackground">@drawable/bg_mapping_dialog</item>
     </style>
 </resources>

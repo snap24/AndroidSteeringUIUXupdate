@@ -1,14 +1,14 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-
-        <item name="android:colorBackground">@color/colorBackgroundBlack</item>
-
+    <!-- Base application theme (Night/Dark Mode). -->
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="colorPrimary">#78909C</item> <!-- Darker Grey -->
+        <item name="colorPrimaryDark">#546E7A</item>
+        <item name="colorAccent">#90A4AE</item>
+        <item name="android:textColor">@android:color/white</item> <!-- Light text for black BG -->
+        <item name="android:fontFamily">sans-serif-black</item>
         <item name="android:windowTranslucentStatus">true</item>
     </style>
 </resources>

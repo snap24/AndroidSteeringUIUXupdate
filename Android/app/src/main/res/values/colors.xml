@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0076AC</color>
-    <color name="colorPrimaryDark">#013B70</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">@color/accent_red</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">@color/accent_red</color>
     <color name="colorBackgroundWhite">#FFFFFF</color>
-    <color name="colorBackgroundBlack">#1E2945</color>
+    <color name="colorBackgroundBlack">#000000</color>
 
     <color name="colorButtonA">#8BC34A</color>
     <color name="colorButtonB">#F44336</color>
     <color name="colorButtonX">#2196F3</color>
     <color name="colorButtonY">#FFEB3B</color>
 
-    <color name="joystickBackground">#6574C7</color>
-    <color name="joystickBorder">#374AB3</color>
-    <color name="joystickButton">#B8446B</color>
+    <color name="joystickBackground">#4D71797E</color>
+    <color name="joystickBorder">#71797E</color>
+    <color name="joystickButton">#71797E</color>
+
+    <!-- Pitch-Black Dark Theme Colors -->
+    <color name="bg_pitch_black">#000000</color>
+    <color name="surface_dark">#0D0D0D</color>
+    <color name="accent_red">#E53935</color>
+    <color name="accent_white">#FFFFFF</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#9E9E9E</color>
+    <color name="button_bg">#1A1A1A</color>
+    <color name="button_border">#333333</color>
+    <color name="slider_track">#2A2A2A</color>
+    <color name="slider_thumb">#E53935</color>
 </resources>

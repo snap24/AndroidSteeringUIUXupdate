@@ -1,74 +1,179 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="32dp">
 
-
-    <TextView
-        android:id="@+id/textViewRadioGroup"
-        android:layout_width="wrap_content"
+    <!-- LEFT COLUMN: CONNECTION CONTROLS -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/connectionColumn"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="casual"
-        android:text="@string/radioButtonTitle"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        android:layout_marginStart="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/centerDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/radioButtonTitle"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRadioGroup">
+
+            <RadioButton
+                android:id="@+id/radioButtonBth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/radioButtonBluetooth"
+                android:fontFamily="sans-serif-black"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonWifi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/radioButtonWifi"
+                android:fontFamily="sans-serif-black"
+                android:textSize="15sp" />
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/buttonConnect"
+            android:textSize="16sp"
+            app:backgroundTint="@color/btn_overlay_bg"
+            android:textColor="@color/btn_overlay_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- CENTER DIVIDER -->
+    <View
+        android:id="@+id/centerDivider"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="#3371797E"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="200dp"
+    <!-- RIGHT COLUMN: CREDITS & SOURCE -->
+    <LinearLayout
+        android:id="@+id/creditsColumn"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="32dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/centerDivider"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
-            android:id="@+id/radioButtonBth"
-            android:layout_width="match_parent"
+        <!-- TEAMCLOUDAY SECTION -->
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="false"
-            android:minHeight="48dp"
-            android:padding="5dp"
-            android:text="@string/radioButtonBluetooth"
-            android:textAlignment="viewEnd" />
+            android:fontFamily="sans-serif-black"
+            android:text="Project Owner"
+            android:textColor="#71797E"
+            android:textSize="12sp" />
 
-        <RadioButton
-            android:id="@+id/radioButtonWifi"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:padding="5dp"
-            android:text="@string/radioButtonWifi"
-            android:textAlignment="viewEnd" />
-    </RadioGroup>
+            android:fontFamily="sans-serif-black"
+            android:text="Instruction to setup AndroidSteering and view original source"
+            android:textSize="15sp"
+            android:layout_marginTop="2dp" />
 
-    <Button
-        android:id="@+id/buttonConnect"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTeamCloudDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="teamclouday"
+            android:textColor="@color/btn_overlay_text"
+            app:backgroundTint="@color/btn_overlay_bg"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-black" />
+
+        <!-- SNAP24 SECTION -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="UI/UX by"
+            android:textColor="#71797E"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="View this app's source code"
+            android:textSize="15sp"
+            android:layout_marginTop="2dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSnap24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="snap24"
+            android:textColor="@color/btn_overlay_text"
+            app:backgroundTint="@color/btn_overlay_bg"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="*Please edit layout according to your preference"
+            android:textColor="#71797E"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <!-- BG IMAGE CREDIT -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBgCredit"
+        style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:onClick="connectionButtonOnClick"
-        android:text="@string/buttonConnect"
-        android:textSize="14sp"
+        android:text="BG Image: John3"
+        android:textColor="#71797E"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

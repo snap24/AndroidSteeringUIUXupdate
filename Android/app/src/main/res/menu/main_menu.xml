@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_set_mapping"
+        android:title="Set Mapping"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_edit_layout"
+        android:title="Edit Layout"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_reset_layout"
+        android:title="Reset Layout"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_import_layout"
+        android:title="Import Layouts"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_export_layout"
+        android:title="Export Layouts"
+        app:showAsAction="never" />
+</menu>
