@@ -1,11 +1,13 @@
 <h1 align="center">Android as Steering Wheel</h1>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Available_on-GitHub-black?style=for-the-badge&logo=github" alt="Available on GitHub" />
-  <img src="https://img.shields.io/badge/App_Version-2.3.0-blue?style=for-the-badge" alt="App Version" />
-  <img src="https://img.shields.io/badge/Platform-Windows_%7C_Android-green?style=for-the-badge" alt="Platforms" />
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge" alt="License" /></a>
-</p>
+<div align="center">
+
+  [![Latest Version](https://img.shields.io/badge/Version-v2.3.1-9575CD?style=flat&logo=github&logoColor=white)](https://github.com/snap24/AndroidSteeringUIUXupdate/releases)
+  ![Java](https://img.shields.io/badge/Java-11-ED8B00?style=flat&logo=openjdk&logoColor=white)
+  ![Android](https://img.shields.io/badge/API-21%2B-3DDC84?style=flat&logo=android&logoColor=white)
+  [![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=flat&logo=apache&logoColor=white)](LICENSE)
+
+</div>
 
 <div align="center">
   <img src="Assets/2.gif" alt="Demo" />
