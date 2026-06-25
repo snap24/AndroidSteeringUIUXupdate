@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="top|center_horizontal"
     android:padding="32dp">
 
     <TextView
@@ -61,14 +61,5 @@
             android:max="300"
             android:progress="100" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_reset_sensi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Reset to Default"
-        android:backgroundTint="#FF5252"
-        android:textColor="#FFFFFF" />
 
 </LinearLayout>

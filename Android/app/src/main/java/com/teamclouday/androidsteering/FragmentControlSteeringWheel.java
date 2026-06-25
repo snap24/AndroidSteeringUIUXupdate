@@ -105,7 +105,7 @@ public class FragmentControlSteeringWheel extends Fragment {
             clutch.setLabel("Clutch");
             clutch.setAccentColor(0xFFFFAB40);
             // Mapped to Right Joystick Y-Axis (Half-Axis: 0.0 to 1.0 = Center to Up)
-            clutch.setOnPedalChangeListener(val -> activity.getGlobalBuffer().addData(MotionStatus.SetRightStickY, val));
+            clutch.setOnPedalChangeListener(val -> activity.getGlobalBuffer().addData(MotionStatus.SetRightStickY, (val * 2.0f) - 1.0f));
         }
 
         // Action Buttons

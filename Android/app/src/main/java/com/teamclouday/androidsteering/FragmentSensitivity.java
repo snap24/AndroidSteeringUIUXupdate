@@ -15,6 +15,15 @@ public class FragmentSensitivity extends Fragment {
 
     private MainActivity activity;
 
+    private SeekBar seekPitch;
+    private SeekBar seekRoll;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,7 +36,7 @@ public class FragmentSensitivity extends Fragment {
         activity = (MainActivity) getActivity();
         if (activity == null) return;
 
-        SeekBar seekPitch = view.findViewById(R.id.seek_pitch_sensi);
+        seekPitch = view.findViewById(R.id.seek_pitch_sensi);
         TextView tvPitch = view.findViewById(R.id.tv_pitch_sensi);
         if (seekPitch != null && tvPitch != null) {
             seekPitch.setProgress((int)(MainActivity.pitchSensitivity * 100));
@@ -46,7 +55,7 @@ public class FragmentSensitivity extends Fragment {
             });
         }
 
-        SeekBar seekRoll = view.findViewById(R.id.seek_roll_sensi);
+        seekRoll = view.findViewById(R.id.seek_roll_sensi);
         TextView tvRoll = view.findViewById(R.id.tv_roll_sensi);
         if (seekRoll != null && tvRoll != null) {
             seekRoll.setProgress((int)(MainActivity.rollSensitivity * 100));
@@ -64,14 +73,22 @@ public class FragmentSensitivity extends Fragment {
                 @Override public void onStopTrackingTouch(SeekBar seekBar) {}
             });
         }
+    }
 
+    @Override
+    public void onCreateOptionsMenu(@NonNull android.view.Menu menu, @NonNull android.view.MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        android.view.MenuItem resetItem = menu.add(android.view.Menu.NONE, 999, android.view.Menu.NONE, "Reset Sensitivity");
+        resetItem.setShowAsAction(android.view.MenuItem.SHOW_AS_ACTION_NEVER);
+    }
 
-        View btnReset = view.findViewById(R.id.btn_reset_sensi);
-        if (btnReset != null) {
-            btnReset.setOnClickListener(v -> {
-                if (seekPitch != null) seekPitch.setProgress(100);
-                if (seekRoll != null) seekRoll.setProgress(100);
-            });
+    @Override
+    public boolean onOptionsItemSelected(@NonNull android.view.MenuItem item) {
+        if (item.getItemId() == 999) {
+            if (seekPitch != null) seekPitch.setProgress(100);
+            if (seekRoll != null) seekRoll.setProgress(100);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }
