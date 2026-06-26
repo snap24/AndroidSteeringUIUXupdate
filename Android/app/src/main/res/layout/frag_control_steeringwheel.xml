@@ -180,23 +180,12 @@
             android:layout_marginTop="32dp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonHOME"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="HOME"
-            android:backgroundTint="#444444"
-            app:layout_constraintStart_toEndOf="@+id/buttonBACK"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp" />
-
-        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonSTART"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="START"
             android:backgroundTint="#444444"
-            app:layout_constraintStart_toEndOf="@+id/buttonHOME"
+            app:layout_constraintStart_toEndOf="@+id/buttonBACK"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp" />

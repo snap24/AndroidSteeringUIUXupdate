@@ -132,7 +132,7 @@ public class FragmentControlSteeringWheel extends Fragment {
         // Top Buttons
         view.findViewById(R.id.buttonSTART).setOnTouchListener(activity::touchSTART);
         view.findViewById(R.id.buttonBACK).setOnTouchListener(activity::touchBACK);
-        view.findViewById(R.id.buttonHOME).setOnTouchListener(activity::touchHOME);
+
         view.findViewById(R.id.buttonLB).setOnTouchListener(activity::touchLB);
         view.findViewById(R.id.buttonRB).setOnTouchListener(activity::touchRB);
     }
