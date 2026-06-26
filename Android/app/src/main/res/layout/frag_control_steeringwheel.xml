@@ -210,10 +210,9 @@
             android:textSize="15sp"
             android:fontFamily="sans-serif-black"
             android:checked="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/steering_wheel_view"
+            app:layout_constraintStart_toEndOf="@+id/steering_wheel_view"
+            android:layout_marginStart="16dp" />
 
         <com.teamclouday.androidsteering.view.SensorCrosshairView
             android:id="@+id/sensorCrosshair"
